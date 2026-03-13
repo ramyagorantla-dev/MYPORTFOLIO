@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramya Gorantla | Cloud Integration Engineer</title>
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="clouds"></div>
+
+<nav>
+
+<h2 class="logo">Ramya</h2>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+
+<section class="hero">
+
+<h1>Ramya Gorantla</h1>
+
+<h3>SAP CPI Integration Developer</h3>
+
+<p>Cloud Integration | SAP BTP | Enterprise Middleware</p>
+
+<a href="Ramya_Gorantla_Resume.pdf" class="btn">Download Resume</a>
+
+</section>
+
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<p>
+SAP Cloud Platform Integration Developer with 2+ years of enterprise
+integration experience at Accenture. Specialized in building scalable
+integration flows connecting SAP ERP systems with external applications
+using SAP CPI and cloud platforms.
+</p>
+
+<p>
+My expertise includes message transformation, API integrations,
+middleware architecture, and cloud-based system integrations.
+</p>
+
+</section>
+
+
+
+<section id="skills">
+
+<h2>Technical Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill">
+<i class="fa-solid fa-cloud"></i>
+<h3>Cloud</h3>
+<p>AWS | Azure | SAP BTP</p>
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-network-wired"></i>
+<h3>Integration</h3>
+<p>SAP CPI | iFlows | APIs</p>
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-code"></i>
+<h3>Programming</h3>
+<p>Groovy | Python | SQL</p>
+</div>
+
+<div class="skill">
+<i class="fa-solid fa-database"></i>
+<h3>Data</h3>
+<p>XML | JSON | MySQL</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="project-container">
+
+<div class="project-card" onclick="openProject('canada')">
+
+<h3>Canada Post Transformation</h3>
+
+<p>Enterprise SAP Integration Project</p>
+
+</div>
+
+
+<div class="project-card" onclick="openProject('restaurant')">
+
+<h3>Restaurant Database System</h3>
+
+<p>Full Stack Academic Database System</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<div id="projectModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeProject()">×</span>
+
+<div id="modalBody"></div>
+
+</div>
+
+</div>
+
+
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<p><i class="fa-solid fa-envelope"></i> ramyagorantla2001@gmail.com</p>
+
+<p>
+<i class="fa-brands fa-linkedin"></i>
+<a href="https://linkedin.com/in/ramya-gorantla" target="_blank">
+LinkedIn
+</a>
+</p>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Ramya Gorantla</p>
+
+</footer>
+
+
+
+<script>
+
+function openProject(project){
+
+let html="";
+
+if(project=="canada"){
+
+html=`
+
+<h2>Canada Post Transformation Project</h2>
+
+<h3>Role</h3>
+<p>SAP CPI Integration Developer – Accenture</p>
+
+<h3>Duration</h3>
+<p>2.5 Years</p>
+
+<h3>Project Overview</h3>
+
+<p>
+Worked on a large-scale enterprise transformation project integrating
+SAP ERP with logistics and external enterprise systems using SAP
+Cloud Platform Integration (CPI).
+</p>
+
+<h3>Key Responsibilities</h3>
+
+<ul>
+<li>Designed and developed SAP CPI iFlows</li>
+<li>Configured adapters (HTTP, SFTP, IDoc, SOAP)</li>
+<li>Developed Groovy scripts for payload transformation</li>
+<li>Performed XML and JSON message transformations</li>
+<li>Handled monitoring and issue resolution</li>
+<li>Provided production support and root cause analysis</li>
+<li>Supported UAT testing and deployments</li>
+</ul>
+
+<h3>Technologies</h3>
+
+<p>
+SAP CPI, SAP BTP, Groovy, XML, JSON, APIs
+</p>
+
+`;
+
+}
+
+if(project=="restaurant"){
+
+html=`
+
+<h2>Restaurant Database Management System</h2>
+
+<h3>Description</h3>
+
+<p>
+Developed a relational database system to manage restaurant operations
+including customers, orders, inventory, and payment transactions.
+</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li>MySQL relational schema design</li>
+<li>Stored procedures and triggers</li>
+<li>Transaction handling</li>
+<li>PHP CRUD operations</li>
+</ul>
+
+<h3>Project Link</h3>
+
+<a href="http://elvis.rowan.edu/~gorant16/AdvancedDatabases/FinalProject/"
+target="_blank">
+
+View Full Project
+
+</a>
+
+`;
+
+}
+
+document.getElementById("modalBody").innerHTML=html;
+document.getElementById("projectModal").style.display="block";
+
+}
+
+function closeProject(){
+document.getElementById("projectModal").style.display="none";
+}
+
+</script>
+
+
+</body>
+</html>
