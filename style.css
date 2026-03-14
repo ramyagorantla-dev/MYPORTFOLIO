@@ -426,3 +426,30 @@ gap:20px;
 .quick-info .info-box:last-child{
 grid-column:4;
 }
+.container{
+max-width:1200px;
+margin:0 auto;
+text-align:center;
+}
+
+.hero{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero-left{
+max-width:900px;
+margin:0 auto;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.quick-info{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
