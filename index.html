@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ramya Gorantla | Portfolio</title>
-  <link rel="stylesheet" href="./style.css?v=50" />
+  <link rel="stylesheet" href="./style.css?v=60" />
 </head>
 <body>
 
@@ -76,72 +76,43 @@
 
 <div class="chat-overlay" id="chatOverlay"></div>
 
-<!-- Floating Button -->
-<button id="openChatbotBtn" class="floating-ai-button">
+<button id="openChatbotBtn" class="floating-ai-button" type="button">
   🤖 Ask Ramya AI
 </button>
 
-<!-- Chatbot -->
 <div class="chatbot-popup" id="chatbotPopup">
-  
   <div class="chatbot-header">
     <span>Ramya AI Assistant</span>
-    <button id="closeChatbotBtn">×</button>
+    <button id="closeChatbotBtn" type="button">×</button>
   </div>
 
-  <iframe 
+  <iframe
     src="https://ramya-ai.onrender.com"
-    class="chatbot-frame">
+    class="chatbot-frame"
+    title="Ramya AI Portfolio Assistant">
   </iframe>
-
 </div>
 
 <script>
   const openBtn = document.getElementById("openChatbotBtn");
   const closeBtn = document.getElementById("closeChatbotBtn");
   const chatbot = document.getElementById("chatbotPopup");
+  const overlay = document.getElementById("chatOverlay");
 
-  openBtn.onclick = () => {
+  openBtn.onclick = function () {
     chatbot.classList.add("show-chatbot");
+    overlay.classList.add("show-overlay");
   };
 
-  closeBtn.onclick = () => {
+  closeBtn.onclick = function () {
     chatbot.classList.remove("show-chatbot");
+    overlay.classList.remove("show-overlay");
   };
-</script>
 
-  async function sendMessage() {
-    const text = input.value.trim();
-    if (!text) return;
-
-    messages.innerHTML += `<div class="user-message">${text}</div>`;
-    input.value = "";
-    messages.innerHTML += `<div class="bot-message loading">Thinking...</div>`;
-    messages.scrollTop = messages.scrollHeight;
-
-    try {
-      const res = await fetch("https://ramya-ai.onrender.com/api/chat", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({message: text})
-      });
-
-      const data = await res.json();
-      document.querySelector(".loading").remove();
-      messages.innerHTML += `<div class="bot-message">${data.reply}</div>`;
-    } catch (error) {
-      document.querySelector(".loading").remove();
-      messages.innerHTML += `<div class="bot-message">Ramya AI is loading. Please try again.</div>`;
-    }
-
-    messages.scrollTop = messages.scrollHeight;
-  }
-
-  sendBtn.onclick = sendMessage;
-
-  input.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") sendMessage();
-  });
+  overlay.onclick = function () {
+    chatbot.classList.remove("show-chatbot");
+    overlay.classList.remove("show-overlay");
+  };
 </script>
 
 </body>
