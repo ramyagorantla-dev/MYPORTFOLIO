@@ -394,3 +394,19 @@ body {
     font-size: 34px;
   }
 }
+.quick-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.info-box {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 220px;
+  min-height: 180px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
