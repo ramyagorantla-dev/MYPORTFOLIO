@@ -76,11 +76,30 @@
     </section>
   </div>
 
-  <!-- Floating AI Assistant Button -->
-  <a href="https://ramya-ai.onrender.com" target="_blank" class="floating-ai-button">
-    <span class="ai-icon">🤖</span>
-    <span class="ai-text">Ask Ramya AI</span>
-  </a>
+ <!-- Floating AI Chatbot Widget -->
+<button class="floating-ai-button" onclick="toggleChatbot()">
+  <span class="ai-icon">🤖</span>
+  <span class="ai-text">Ask Ramya AI</span>
+</button>
+
+<div class="chatbot-popup" id="chatbotPopup">
+  <div class="chatbot-header">
+    <span>Ramya AI Assistant</span>
+    <button onclick="toggleChatbot()">×</button>
+  </div>
+
+  <iframe 
+    src="https://ramya-ai.onrender.com" 
+    class="chatbot-frame">
+  </iframe>
+</div>
+
+<script>
+  function toggleChatbot() {
+    const chatbot = document.getElementById("chatbotPopup");
+    chatbot.classList.toggle("show-chatbot");
+  }
+</script>
 
 </body>
 </html>
