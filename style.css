@@ -53,30 +53,44 @@ body {
   color: #2563eb;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO CENTERED ===== */
 .container {
   width: 90%;
-  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hero {
-  padding: 60px 0;
+  min-height: calc(100vh - 70px);
+  padding: 70px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* IMPORTANT: centers all main content */
+.hero-left {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 56px;
   margin-bottom: 10px;
 }
 
 .hero h2 {
-  font-size: 22px;
+  font-size: 26px;
   color: #3b82f6;
   margin-bottom: 20px;
 }
 
 .hero p {
-  max-width: 800px;
-  margin-bottom: 30px;
+  max-width: 850px;
+  margin: 0 auto 30px auto;
 }
 
 /* ===== TAG ===== */
@@ -85,15 +99,16 @@ body {
   background: #eaf2ff;
   padding: 10px 20px;
   border-radius: 30px;
-  margin-bottom: 20px;
+  margin: 0 auto 25px auto;
 }
 
 /* ===== BUTTONS ===== */
 .hero-buttons {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .btn {
@@ -118,15 +133,17 @@ body {
 /* ===== INFO BOXES ===== */
 .quick-info {
   display: flex;
+  justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
 .info-box {
   background: white;
-  padding: 20px;
+  padding: 25px;
   border-radius: 15px;
-  width: 200px;
+  width: 220px;
+  min-height: 150px;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
@@ -142,21 +159,16 @@ body {
   right: 25px;
   bottom: 25px;
   z-index: 999999;
-
   display: flex;
   align-items: center;
   gap: 10px;
-
   background: linear-gradient(135deg, #2563eb, #7c3aed);
   color: white;
-
   border: 2px solid white;
   padding: 15px 22px;
   border-radius: 999px;
-
   font-weight: 700;
   font-size: 16px;
-
   cursor: pointer;
   box-shadow: 0 12px 35px rgba(37, 99, 235, 0.4);
 }
@@ -165,17 +177,15 @@ body {
   transform: translateY(-4px);
 }
 
-/* ===== OVERLAY (BACKGROUND BLUR) ===== */
+/* ===== OVERLAY ===== */
 .chat-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-
   background: rgba(15, 23, 42, 0.35);
   backdrop-filter: blur(4px);
-
   z-index: 999997;
   display: none;
 }
@@ -187,23 +197,17 @@ body {
 /* ===== CENTERED CHATBOT ===== */
 .chatbot-popup {
   position: fixed;
-
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   width: 430px;
   height: 620px;
-
   background: #0f172a;
   border-radius: 20px;
   overflow: hidden;
-
   z-index: 999998;
-
   box-shadow: 0 25px 70px rgba(0,0,0,0.45);
   border: 1px solid rgba(255,255,255,0.2);
-
   display: none;
 }
 
@@ -211,26 +215,36 @@ body {
   display: block;
 }
 
-/* ===== HEADER ===== */
+/* ===== CHATBOT HEADER ===== */
 .chatbot-header {
   height: 58px;
   background: linear-gradient(135deg, #2563eb, #7c3aed);
   color: white;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 16px 18px;
   font-weight: 700;
 }
 
-.chatbot-header button {
+.chatbot-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chatbot-header button,
+.chatbot-header-actions button {
   background: transparent;
   border: none;
   color: white;
-  font-size: 26px;
+  font-size: 24px;
   cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ===== IFRAME ===== */
@@ -240,31 +254,42 @@ body {
   border: none;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 600px) {
-  .chatbot-popup {
-    width: 92%;
-    height: 560px;
-  }
-}
-
-.chatbot-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.chatbot-header-actions button {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* ===== MAXIMIZED CHATBOT ===== */
 .chatbot-popup.chatbot-maximized {
   width: 85vw !important;
   height: 85vh !important;
   max-width: 1100px;
   max-height: 800px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero h2 {
+    font-size: 22px;
+  }
+
+  .chatbot-popup {
+    width: 92%;
+    height: 560px;
+  }
+
+  .chatbot-popup.chatbot-maximized {
+    width: 94vw !important;
+    height: 88vh !important;
+  }
 }
