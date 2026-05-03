@@ -189,25 +189,37 @@ body {
   display: block;
 }
 
-/* ===== CENTERED CHATBOT ===== */
+/* ===== RIGHT SIDE CHATBOT (FINAL FIX) ===== */
 .chatbot-popup {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  right: 0;
+
   width: 430px;
-  height: 620px;
+  height: 100vh;
+
   background: #0f172a;
-  border-radius: 20px;
-  overflow: hidden;
   z-index: 999998;
-  box-shadow: 0 25px 70px rgba(0,0,0,0.45);
-  border: 1px solid rgba(255,255,255,0.2);
-  display: none;
+
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: -20px 0 60px rgba(0,0,0,0.45);
 }
 
+/* Slide in */
 .chatbot-popup.show-chatbot {
-  display: block;
+  transform: translateX(0);
+}
+
+/* Fix iframe height */
+.chatbot-frame {
+  width: 100%;
+  height: calc(100vh - 58px);
+  border: none;
 }
 
 /* ===== CHATBOT HEADER ===== */
