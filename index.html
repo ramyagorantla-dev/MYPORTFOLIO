@@ -108,37 +108,59 @@
     const chatbot = document.getElementById("chatbotPopup");
     const overlay = document.getElementById("chatOverlay");
 
-    openBtn.addEventListener("click", function () {
+    let isMaximized = false;
+
+    openBtn.onclick = function () {
       chatbot.classList.add("show-chatbot");
       overlay.classList.add("show-overlay");
-    });
+    };
 
-    closeBtn.addEventListener("click", function () {
+    closeBtn.onclick = function () {
       chatbot.classList.remove("show-chatbot");
-      chatbot.classList.remove("chatbot-maximized");
       overlay.classList.remove("show-overlay");
-      maximizeBtn.textContent = "⛶";
-    });
+      resetChatbot();
+    };
 
-    overlay.addEventListener("click", function () {
+    overlay.onclick = function () {
       chatbot.classList.remove("show-chatbot");
-      chatbot.classList.remove("chatbot-maximized");
       overlay.classList.remove("show-overlay");
-      maximizeBtn.textContent = "⛶";
-    });
+      resetChatbot();
+    };
 
-    maximizeBtn.addEventListener("click", function (e) {
+    maximizeBtn.onclick = function (e) {
       e.preventDefault();
       e.stopPropagation();
 
-      chatbot.classList.toggle("chatbot-maximized");
-
-      if (chatbot.classList.contains("chatbot-maximized")) {
+      if (!isMaximized) {
+        chatbot.style.position = "fixed";
+        chatbot.style.top = "50%";
+        chatbot.style.left = "50%";
+        chatbot.style.right = "auto";
+        chatbot.style.width = "90vw";
+        chatbot.style.height = "90vh";
+        chatbot.style.transform = "translate(-50%, -50%)";
+        chatbot.style.borderRadius = "20px";
+        chatbot.style.zIndex = "1000000";
         maximizeBtn.textContent = "🗗";
+        isMaximized = true;
       } else {
-        maximizeBtn.textContent = "⛶";
+        resetChatbot();
       }
-    });
+    };
+
+    function resetChatbot() {
+      chatbot.style.position = "";
+      chatbot.style.top = "";
+      chatbot.style.left = "";
+      chatbot.style.right = "";
+      chatbot.style.width = "";
+      chatbot.style.height = "";
+      chatbot.style.transform = "";
+      chatbot.style.borderRadius = "";
+      chatbot.style.zIndex = "";
+      maximizeBtn.textContent = "⛶";
+      isMaximized = false;
+    }
   });
 </script>
 
