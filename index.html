@@ -134,9 +134,17 @@
 
   overlay.onclick = closeBtn.onclick;
 
-  maximizeBtn.onclick = function () {
+  maximizeBtn.onclick = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
     chatbot.classList.toggle("chatbot-maximized");
-    maximizeBtn.textContent = chatbot.classList.contains("chatbot-maximized") ? "🗗" : "⛶";
+
+    if (chatbot.classList.contains("chatbot-maximized")) {
+      maximizeBtn.textContent = "🗗";
+    } else {
+      maximizeBtn.textContent = "⛶";
+    }
   };
 </script>
 
