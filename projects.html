@@ -2,42 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects | Ramya Gorantla</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2000" />
 </head>
+
 <body>
 
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">Ramya<span>G</span></div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a class="active" href="projects.html">Projects</a></li>
-        <li><a href="achievements.html">Achievements</a></li>
-        <li><a href="education.html">Education</a></li>
-      </ul>
-    </div>
-  </nav>
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">Ramya<span>G</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a class="active" href="projects.html">Projects</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="education.html">Education</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <section class="page-section">
-    <div class="container">
-      <a href="index.html" class="back-link">← Back to Home</a>
-      <h1 class="page-title">Projects</h1>
-        <div class="card">
-          <h3>Restaurant Database Management System</h3>
-          <h4>MySQL • PHP • CRUD • Stored Procedures • Triggers</h4>
-          <p>
-            Academic full-stack database project focused on schema design, PHP development, SQL logic, CRUD functionality, and reliable transaction handling.
-          </p>
-          <a class="project-link" href="restaurant-db.html">View Full Project Details</a>
-        </div>
+<!-- ===== PROJECTS ===== -->
+<section class="page-section">
+  <div class="container">
+
+    <a href="index.html" class="back-link">← Back to Home</a>
+
+    <h1 class="page-title">Projects</h1>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 -->
+      <div class="project-card">
+        <h3>AI-Driven Order Processing System</h3>
+        <h4>Python • Flask • SAP CPI • Kafka • Docker</h4>
+        <p>
+          Built an end-to-end intelligent pipeline integrating SAP CPI with a Flask ML service 
+          and Apache Kafka to classify and route orders (Urgent, Normal, Risk) in real-time.
+        </p>
       </div>
-    </div>
-  </section>
 
-  <div class="footer">© 2026 Ramya Gorantla</div>
+      <!-- PROJECT 2 -->
+      <div class="project-card">
+        <h3>Julius Silvert B2B Platform Redesign</h3>
+        <h4>HTML • CSS • JavaScript • UX Design</h4>
+        <p>
+          Conducted a full QA audit (40+ bugs) and redesigned a live B2B platform with 
+          inventory dashboards, smart ordering, and improved UX for chefs.
+        </p>
+        <a href="https://ramyagorantla-dev.github.io/julius-silvert-redesign" target="_blank">
+          🔗 View Live Project
+        </a>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="project-card">
+        <h3>Restaurant Database Management System</h3>
+        <h4>MySQL • PHP • CRUD • Stored Procedures</h4>
+        <p>
+          Designed a full-stack database system with triggers, transactions, and CRUD 
+          operations to manage orders, inventory, and payments.
+        </p>
+        <a href="restaurant-db.html">🔗 View Details</a>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="project-card">
+        <h3>Enterprise Campus Network Design</h3>
+        <h4>Cisco Packet Tracer • VLAN • DHCP • DNS</h4>
+        <p>
+          Built a full enterprise network simulation with VLAN segmentation, subnetting, 
+          and wireless integration for secure and scalable infrastructure.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">© 2026 Ramya Gorantla</div>
+
 </body>
 </html>
