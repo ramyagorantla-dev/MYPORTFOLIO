@@ -76,30 +76,38 @@
     </section>
   </div>
 
- <!-- Floating AI Chatbot Widget -->
-<button class="floating-ai-button" onclick="toggleChatbot()">
-  <span class="ai-icon">🤖</span>
-  <span class="ai-text">Ask Ramya AI</span>
-</button>
+  <!-- Floating AI Chatbot Widget -->
+  <button id="openChatbotBtn" class="floating-ai-button" type="button">
+    <span class="ai-icon">🤖</span>
+    <span class="ai-text">Ask Ramya AI</span>
+  </button>
 
-<div class="chatbot-popup" id="chatbotPopup">
-  <div class="chatbot-header">
-    <span>Ramya AI Assistant</span>
-    <button onclick="toggleChatbot()">×</button>
+  <div class="chatbot-popup" id="chatbotPopup">
+    <div class="chatbot-header">
+      <span>Ramya AI Assistant</span>
+      <button id="closeChatbotBtn" type="button">×</button>
+    </div>
+
+    <iframe 
+      src="https://ramya-ai.onrender.com" 
+      class="chatbot-frame"
+      title="Ramya AI Portfolio Assistant">
+    </iframe>
   </div>
 
-  <iframe 
-    src="https://ramya-ai.onrender.com" 
-    class="chatbot-frame">
-  </iframe>
-</div>
+  <script>
+    const openBtn = document.getElementById("openChatbotBtn");
+    const closeBtn = document.getElementById("closeChatbotBtn");
+    const chatbotPopup = document.getElementById("chatbotPopup");
 
-<script>
-  function toggleChatbot() {
-    const chatbot = document.getElementById("chatbotPopup");
-    chatbot.classList.toggle("show-chatbot");
-  }
-</script>
+    openBtn.addEventListener("click", function () {
+      chatbotPopup.classList.toggle("show-chatbot");
+    });
+
+    closeBtn.addEventListener("click", function () {
+      chatbotPopup.classList.remove("show-chatbot");
+    });
+  </script>
 
 </body>
 </html>
