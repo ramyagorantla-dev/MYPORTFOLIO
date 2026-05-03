@@ -63,34 +63,29 @@ body {
 .hero {
   min-height: calc(100vh - 70px);
   padding: 70px 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
-/* IMPORTANT: centers all main content */
 .hero-left {
   width: 100%;
-  max-width: 950px;
-  margin: 0 auto;
+  max-width: 850px;
   text-align: center;
-}
-
-.hero h1 {
-  font-size: 56px;
-  margin-bottom: 10px;
-}
-
-.hero h2 {
-  font-size: 26px;
-  color: #3b82f6;
-  margin-bottom: 20px;
+  margin: 0 auto;
 }
 
 .hero p {
-  max-width: 850px;
   margin: 0 auto 30px auto;
+}
+
+.hero-buttons {
+  justify-content: center;
+}
+
+.quick-info {
+  justify-content: center;
 }
 
 /* ===== TAG ===== */
