@@ -76,14 +76,20 @@
 
 <div class="chat-overlay" id="chatOverlay"></div>
 
+<div class="chat-overlay" id="chatOverlay"></div>
+
 <button id="openChatbotBtn" class="floating-ai-button" type="button">
-  🤖 Ask Ramya AI
+  🤖 <span>Ask Ramya AI</span>
 </button>
 
 <div class="chatbot-popup" id="chatbotPopup">
   <div class="chatbot-header">
     <span>Ramya AI Assistant</span>
-    <button id="closeChatbotBtn" type="button">×</button>
+
+    <div class="chatbot-header-actions">
+      <button id="maximizeChatbotBtn" type="button" title="Maximize">⛶</button>
+      <button id="closeChatbotBtn" type="button" title="Close">×</button>
+    </div>
   </div>
 
   <iframe
@@ -96,6 +102,7 @@
 <script>
   const openBtn = document.getElementById("openChatbotBtn");
   const closeBtn = document.getElementById("closeChatbotBtn");
+  const maximizeBtn = document.getElementById("maximizeChatbotBtn");
   const chatbot = document.getElementById("chatbotPopup");
   const overlay = document.getElementById("chatOverlay");
 
@@ -106,14 +113,17 @@
 
   closeBtn.onclick = function () {
     chatbot.classList.remove("show-chatbot");
+    chatbot.classList.remove("chatbot-maximized");
     overlay.classList.remove("show-overlay");
+    maximizeBtn.textContent = "⛶";
   };
 
-  overlay.onclick = function () {
-    chatbot.classList.remove("show-chatbot");
-    overlay.classList.remove("show-overlay");
+  overlay.onclick = closeBtn.onclick;
+
+  maximizeBtn.onclick = function () {
+    chatbot.classList.toggle("chatbot-maximized");
+    maximizeBtn.textContent = chatbot.classList.contains("chatbot-maximized") ? "🗗" : "⛶";
   };
 </script>
-
 </body>
 </html>
