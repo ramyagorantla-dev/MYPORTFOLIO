@@ -76,48 +76,39 @@
 
 <div class="chat-overlay" id="chatOverlay"></div>
 
-<button id="openChatbotBtn" class="floating-ai-button" type="button">
-  🤖 <span>Ask Ramya AI</span>
+<!-- Floating Button -->
+<button id="openChatbotBtn" class="floating-ai-button">
+  🤖 Ask Ramya AI
 </button>
 
+<!-- Chatbot -->
 <div class="chatbot-popup" id="chatbotPopup">
+  
   <div class="chatbot-header">
     <span>Ramya AI Assistant</span>
-    <button id="closeChatbotBtn" type="button">×</button>
+    <button id="closeChatbotBtn">×</button>
   </div>
 
-  <div class="chatbot-messages" id="chatbotMessages">
-    <div class="bot-message">
-      Hi, I’m Ramya’s AI Portfolio Assistant. Try typing “skills”, “projects”, “SAP”, “Azure”, or “AWS”.
-    </div>
-  </div>
+  <iframe 
+    src="https://ramya-ai.onrender.com"
+    class="chatbot-frame">
+  </iframe>
 
-  <div class="chatbot-input-area">
-    <input id="chatbotInput" type="text" placeholder="Ask about skills, projects, SAP..." />
-    <button id="sendChatbotBtn" type="button">Ask AI</button>
-  </div>
 </div>
 
 <script>
   const openBtn = document.getElementById("openChatbotBtn");
   const closeBtn = document.getElementById("closeChatbotBtn");
-  const popup = document.getElementById("chatbotPopup");
-  const overlay = document.getElementById("chatOverlay");
-  const messages = document.getElementById("chatbotMessages");
-  const input = document.getElementById("chatbotInput");
-  const sendBtn = document.getElementById("sendChatbotBtn");
+  const chatbot = document.getElementById("chatbotPopup");
 
-  openBtn.onclick = function () {
-    popup.classList.add("show-chatbot");
-    overlay.classList.add("show-overlay");
+  openBtn.onclick = () => {
+    chatbot.classList.add("show-chatbot");
   };
 
-  closeBtn.onclick = function () {
-    popup.classList.remove("show-chatbot");
-    overlay.classList.remove("show-overlay");
+  closeBtn.onclick = () => {
+    chatbot.classList.remove("show-chatbot");
   };
-
-  overlay.onclick = closeBtn.onclick;
+</script>
 
   async function sendMessage() {
     const text = input.value.trim();
