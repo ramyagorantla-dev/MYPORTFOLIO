@@ -248,3 +248,36 @@ h1 {
     max-width: 100% !important;
   }
 }
+
+/* ===== PUBLICATION FIX ===== */
+.publication-card {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  margin-top: 25px;
+}
+
+.publication-card img {
+  width: 300px;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .publication-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .publication-card img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
