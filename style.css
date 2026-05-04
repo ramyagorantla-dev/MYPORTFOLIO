@@ -281,3 +281,16 @@ h1 {
     max-width: 100%;
   }
 }
+
+.chatbot-popup.chatbot-maximized {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 95vw !important;
+  height: 95vh !important;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 20px !important;
+  z-index: 1000000 !important;
+}
