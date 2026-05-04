@@ -189,3 +189,62 @@ h1 {
     max-width: 100% !important;
   }
 }
+
+/* ===== ACHIEVEMENTS CERTIFICATE FIX ===== */
+.cert-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 25px !important;
+  margin-top: 30px !important;
+}
+
+.cert-card {
+  background: #ffffff !important;
+  border-radius: 18px !important;
+  padding: 22px !important;
+  text-align: center !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08) !important;
+  overflow: hidden !important;
+}
+
+.cert-card img {
+  width: 100% !important;
+  height: 180px !important;
+  max-height: 180px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto 15px auto !important;
+}
+
+.cert-card h3 {
+  font-size: 18px !important;
+  margin-bottom: 8px !important;
+  color: #10233d !important;
+}
+
+.cert-card p {
+  color: #64748b !important;
+  font-size: 14px !important;
+}
+
+.publication-card img {
+  width: 280px !important;
+  max-width: 280px !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 900px) {
+  .cert-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .publication-card {
+    flex-direction: column !important;
+  }
+
+  .publication-card img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
